@@ -1,3 +1,4 @@
+import 'package:c111_exam_friday/widgets/exercise_item.dart';
 import 'package:c111_exam_friday/widgets/positive_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -141,66 +142,60 @@ class Screen2 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Best Seller',
+                    'Exercise',
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Text(
                     'See more',
                     style: TextStyle(
                       fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0XFF4838D1),
+                      fontWeight: FontWeight.w600,
+                      color: Color(0XFF027A48),
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 144,
-                width: 315,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
-                      width: 315,
-                      height: 144,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 217, 217, 220),
+              const SizedBox(
+                height: 12,
+              ),
+              Column(
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ExerciseItem(
+                        color: Colors.purple.withOpacity(.2),
+                        image: 'assets/images2/relaxing.png',
+                        text: 'Relaxation',
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Image.asset(
-                              'assets/images/Image Placeholder 240x240.png'),
-                          const Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Light Mage',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                'See more',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0XFF4838D1),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                      ExerciseItem(
+                        color: Colors.pink.withOpacity(.2),
+                        image: 'assets/images2/meditation.png',
+                        text: 'Meditation',
                       ),
-                    );
-                  },
-                ),
-              )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ExerciseItem(
+                        color: Colors.orange.withOpacity(.2),
+                        image: 'assets/images2/Beathing.png',
+                        text: 'Beathing',
+                      ),
+                      ExerciseItem(
+                        color: Colors.blue.withOpacity(.2),
+                        image: 'assets/images2/yoga.png',
+                        text: 'Yoga',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         ),
